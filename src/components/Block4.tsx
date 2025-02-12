@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { getTableData, TableEnum } from "../server";
+import LineChart from "./LineChart";
 
 interface DataType {
   id: number;
@@ -27,10 +28,27 @@ const Block4 = () => {
   }, []);
 
   return (
-    <div>
-      <p>Block 4</p>
-      <div>
-        {data && data.map((item: any) => <div key={item.id}>{item.date}</div>)}
+    <div className="w-full bg-white rounded-lg shadow-sm shadow-gray-200 p-6">
+      <p className="text-xl font-semibold">Customers by device</p>
+      <div className="w-full mt-4">
+        <LineChart data={data} />
+      </div>
+
+      <div className="flex gap-4 mt-4">
+        <div className="w-full">
+          <div className="flex gap-2 items-center">
+            <p>Web Sales</p>
+            <div className="min-h-4 w-4 rounded-md bg-blue-600"></div>
+          </div>
+          <p className="text-sm font-semibold">1,304%</p>
+        </div>
+        <div className="w-full">
+          <div className="flex gap-2 items-center">
+            <p>Offline Sales</p>
+            <div className="min-h-4 w-4 rounded-md bg-cyan-100"></div>
+          </div>
+          <p className="text-sm font-semibold">473%</p>
+        </div>
       </div>
     </div>
   );
