@@ -18,7 +18,9 @@ const Dashboard = () => {
           <Block6 />
         </div>
 
-        <div className="w-[30%] h-full bg-red-500"></div>
+        <div className="w-[30%] h-full">
+          <Block3 />
+        </div>
       </div>
     </div>
   );
