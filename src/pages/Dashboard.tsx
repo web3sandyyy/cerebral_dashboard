@@ -12,9 +12,10 @@ const Dashboard = () => {
       <Sidebar />
 
       <div className="flex-grow p-4 flex gap-4">
-        <div className="w-[70%] h-full bg-white rounded-lg shadow-sm shadow-gray-200">
+        <div className="w-[70%] h-full bg-white rounded-lg shadow-sm shadow-gray-200 flex flex-col justify-between">
           <Block1 />
           <Block2 />
+          <Block6 />
         </div>
 
         <div className="w-[30%] h-full bg-red-500"></div>

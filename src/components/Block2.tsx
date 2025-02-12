@@ -29,7 +29,7 @@ const Block2 = () => {
   }, []);
 
   return (
-    <div className="w-full p-6">
+    <div className="w-full p-6 py-2">
       <div className="flex items-center justify-between">
         <p className="text-xl font-semibold">Comparison </p>
 
