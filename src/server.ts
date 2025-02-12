@@ -4,6 +4,12 @@ const supabaseUrl = import.meta.env.VITE_SUPABASE_PROJECT_URL;
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
+export enum TableEnum {
+  TABLE_TWO = "two",
+  TABLE_FOUR = "four",
+  TABLE_SIX = "six",
+}
+
 export async function adminLogin(username: string, password: string) {
   const { data, error } = await supabase
     .from("admin")
@@ -18,9 +24,9 @@ export async function adminLogin(username: string, password: string) {
 
   if (data && data.length > 0) {
     const creds = {
-        username,
-        password,
-    }
+      username,
+      password,
+    };
     localStorage.setItem("authenticated", "true");
     localStorage.setItem("creds", JSON.stringify(creds));
 
@@ -30,23 +36,28 @@ export async function adminLogin(username: string, password: string) {
   }
 }
 
-export async function getTableTwo() {
+export async function getTableData(tableName: TableEnum) {
   const isAuthenticated = localStorage.getItem("authenticated");
   const creds = JSON.parse(localStorage.getItem("creds") || "{}");
 
-  if (isAuthenticated !== "true") {
+  if (isAuthenticated !== "true" || !creds.username || !creds.password) {
     console.error("User is not authenticated");
     return null;
   }
 
-  await supabase.rpc("set_auth", {
+  const { error: authError } = await supabase.rpc("set_auth", {
     username: creds.username,
     password: creds.password,
   });
 
-  const { data, error } = await supabase.from("two").select();
+  if (authError) {
+    console.error("Error setting auth:", authError);
+    return null;
+  }
+
+  const { data, error } = await supabase.from(tableName).select();
   if (error) {
-    console.error("Error fetching data from table two:", error);
+    console.error(`Error fetching data from table ${tableName}:`, error);
     return null;
   }
   return data;
