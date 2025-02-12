@@ -27,7 +27,7 @@ const Card = ({
       <p className="text-sm font-semibold text-gray-500">{title}</p>
       <div className="flex items-center gap-2 mt-4">
         <p className="text-2xl font-semibold">
-          {isCurrency ? `$${formatNumber(value)}` : formatNumber(value)}
+          {isCurrency ? `$${formatNumber({ num: value })}` : formatNumber({ num: value })}
         </p>
         <div
           className={` border rounded-full p-1 px-2 text-xs flex items-center gap-1 ${

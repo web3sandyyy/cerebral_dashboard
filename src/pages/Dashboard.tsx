@@ -14,6 +14,7 @@ const Dashboard = () => {
       <div className="flex-grow p-4 flex gap-4">
         <div className="w-[70%] h-full bg-white rounded-lg shadow-sm shadow-gray-200">
           <Block1 />
+          <Block2 />
         </div>
 
         <div className="w-[30%] h-full bg-red-500"></div>

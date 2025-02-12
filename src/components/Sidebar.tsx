@@ -50,8 +50,11 @@ const Sidebar = () => {
       </div>
 
       <div className="flex flex-col gap-2 mt-6 font-semibold text-gray-500">
-        {menuItems1.map((item) => (
-          <div className="flex items-center gap-4 px-6 py-2 rounded-md hover:bg-gray-200 duration-100">
+        {menuItems1.map((item, index) => (
+          <div
+            className="flex items-center gap-4 px-6 py-2 rounded-md hover:bg-gray-200 duration-100"
+            key={index}
+          >
             <img src={item.icon} alt={item.name} className="w-5 h-5" />
             <p>{item.name}</p>
           </div>
@@ -61,11 +64,14 @@ const Sidebar = () => {
       <p className="text-sm font-semibold mt-6 px-6 text-gray-500">MENU</p>
 
       <div className="flex flex-col gap-4 mt-2 font-semibold text-gray-500">
-        {menuItems2.map((item) => (
+        {menuItems2.map((item, index) => (
           <div
             className={`flex items-center gap-4 px-6 py-2 rounded-md duration-100 ${
-              item.name === "Dashboard" ? "bg-white text-black shadow-sm shadow-gray-200" : "hover:bg-gray-200"
+              item.name === "Dashboard"
+                ? "bg-white text-black shadow-sm shadow-gray-200"
+                : "hover:bg-gray-200"
             }`}
+            key={index}
           >
             <img src={item.icon} alt={item.name} className="w-5 h-5" />
             <p>{item.name}</p>

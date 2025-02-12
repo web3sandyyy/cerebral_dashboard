@@ -1,8 +1,9 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { getTableData, TableEnum } from "../server";
-
-interface DataType {
+import angleIcon from "../assets/icons/angle.svg";
+import BarGraph from "./BarGraph";
+export interface DataType {
   id: number;
   Last_year: number;
   Month: string;
@@ -28,12 +29,17 @@ const Block2 = () => {
   }, []);
 
   return (
-    <div>
-      <p>Block 2</p>
-      <div>
-        {data &&
-          data.map((item: any) => <div key={item.id}>{item.Last_year}</div>)}
+    <div className="w-full p-6">
+      <div className="flex items-center justify-between">
+        <p className="text-xl font-semibold">Comparison </p>
+
+        <div className="flex items-center gap-1 border border-gray-300 p-2 px-3 rounded-full">
+          <p>6 months</p>
+          <img src={angleIcon} alt="angle" className="w-6 h-6" />
+        </div>
       </div>
+
+      <BarGraph from={0} to={40000} interval={10000} graphData={data} />
     </div>
   );
 };
