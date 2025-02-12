@@ -28,13 +28,13 @@ const Block4 = () => {
   }, []);
 
   return (
-    <div className="w-full bg-white rounded-lg shadow-sm shadow-gray-200 p-6">
+    <div className="w-full bg-white rounded-lg shadow-sm shadow-gray-200 p-4 md:p-6">
       <p className="text-xl font-semibold">Customers by device</p>
       <div className="w-full mt-4">
         <LineChart data={data} />
       </div>
 
-      <div className="flex gap-4 mt-4">
+      <div className="flex gap-2 md:gap-4 mt-4">
         <div className="w-full">
           <div className="flex gap-2 items-center">
             <p>Web Sales</p>

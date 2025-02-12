@@ -31,7 +31,7 @@ const Block6 = () => {
   }, []);
 
   return (
-    <div className="w-full p-6">
+    <div className="w-full p-4 md:p-6">
       <div className="flex items-center justify-between">
         <p className="text-xl font-semibold">Top Products </p>
 
@@ -40,8 +40,8 @@ const Block6 = () => {
         </div>
       </div>
 
-      <div className="w-full mt-6">
-        <div className="grid grid-cols-6 gap-4 text-gray-500 text-sm border-b border-gray-300 pb-2">
+      <div className="w-full mt-4 md:mt-6">
+        <div className="grid grid-cols-6 gap-2 md:gap-4 text-gray-500 text-sm border-b border-gray-300 pb-2">
           <p className="col-span-2">Product</p>
           <p>Sold Amount</p>
           <p>Unit Price</p>
@@ -49,7 +49,7 @@ const Block6 = () => {
           <p>Rating</p>
         </div>
         {data.map((item) => (
-          <div className=" grid grid-cols-6 gap-4 text-sm text-gray-500 p-2" key={item.id}>
+          <div className=" grid grid-cols-6 gap-2 md:gap-4 text-sm text-gray-500 p-2" key={item.id}>
             <p className="text-base font-semibold text-gray-800 col-span-2">{item.Product}</p>
             <p>{item.sold_amount}</p>
             <p>${item.unit_price}</p>

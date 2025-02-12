@@ -23,9 +23,9 @@ const Card = ({
   isCurrency?: boolean;
 }) => {
   return (
-    <div className="w-full border border-gray-200 p-4 rounded-lg ">
+    <div className="w-full border border-gray-200 p-2 md:p-4 rounded-lg ">
       <p className="text-sm font-semibold text-gray-500">{title}</p>
-      <div className="flex items-center gap-2 mt-4">
+      <div className="flex items-center gap-2 mt-2 md:mt-4">
         <p className="text-2xl font-semibold">
           {isCurrency ? `$${formatNumber({ num: value })}` : formatNumber({ num: value })}
         </p>
@@ -62,11 +62,11 @@ const Block1 = () => {
   }, []);
 
   return (
-    <div className="w-full rounded-t-lg p-6">
+    <div className="w-full rounded-t-lg p-4 md:p-6">
       <div className="flex items-center justify-between">
-        <p className="text-3xl font-semibold">Dashboard</p>
+        <p className="text-2xl md:text-3xl font-semibold">Dashboard</p>
 
-        <div className="flex items-center gap-2">
+        <div className="flex flex-col md:flex-row items-center gap-2">
           <p>Compare to</p>
 
           <div className="flex items-center gap-1 border border-gray-300 p-2 px-3 rounded-full">
@@ -76,7 +76,7 @@ const Block1 = () => {
         </div>
       </div>
 
-      <div className="w-full mt-6 gap-4 grid grid-cols-3">
+      <div className="w-full mt-4 md:mt-6 gap-2 md:gap-4 grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2">
         <Card
           title="Purchases"
           value={data?.purchases || 0}

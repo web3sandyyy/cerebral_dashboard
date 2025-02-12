@@ -11,14 +11,14 @@ const Dashboard = () => {
     <div className="min-h-[100dvh] w-full flex bg-gray-100 ">
       <Sidebar />
 
-      <div className="flex-grow p-4 flex gap-4">
-        <div className="w-[70%] h-full bg-white rounded-lg shadow-sm shadow-gray-200 flex flex-col justify-between">
+      <div className="flex-grow p-2 md:p-4 flex flex-col lg:flex-row gap-2 md:gap-4">
+        <div className="w-full lg:w-[70%]  h-full bg-white rounded-lg shadow-sm shadow-gray-200 flex flex-col justify-between">
           <Block1 />
           <Block2 />
           <Block6 />
         </div>
 
-        <div className="w-[30%] h-full  flex flex-col gap-4">
+        <div className="w-full lg:w-[30%] h-full  flex lg:flex-col md:flex-row flex-col  gap-4">
           <Block3 />
           <Block4 />
           <Block5 />

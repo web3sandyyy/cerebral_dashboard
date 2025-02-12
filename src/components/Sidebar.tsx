@@ -43,7 +43,7 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="w-[20%] max-w-[300px] min-h-full bg-gray-100 p-4">
+    <div className="w-[20%] max-w-[300px] min-h-full bg-gray-100 p-4 hidden xl:block">
       <div className="flex items-center gap-2 px-6">
         <img src={logoIcon} alt="logo" className="w-6 h-6" />
         <p className="text-xl font-bold text-center">Salesway</p>

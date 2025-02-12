@@ -25,13 +25,13 @@ const BarGraph = ({
   };
 
   return (
-    <div className="w-full mt-6">
+    <div className="w-full mt-4 md:mt-6">
       <div className="w-full flex ">
         <div>
           {xAxis.map((item, index) => (
             <div
               key={index}
-              className="w-fit min-h-[60px] relative min-w-12 text-gray-500"
+              className="w-fit min-h-[60px] relative min-w-12  text-gray-500"
             >
               {index === 0 && (
                 <p className="absolute top-0 -translate-y-1/2 right-1/2 translate-x-1/2">
@@ -45,10 +45,10 @@ const BarGraph = ({
           ))}
         </div>
 
-        <div className="flex-grow flex justify-around gap-4 md:gap-6  ml-4 relative">
+        <div className="flex-grow flex justify-around gap-2 md:gap-4 lg:gap-6  ml-4 relative">
           {graphData.map((item, index) => (
             <div
-              className="w-full max-w-24 h-full flex items-end  gap-2"
+              className="w-full max-w-24 h-full flex items-end  gap-1 md:gap-2"
               key={index}
             >
               <div
@@ -85,7 +85,7 @@ const BarGraph = ({
             ))}
           </div>
 
-          <div className="w-full flex mt-6 gap-4 justify-center text-sm">
+          <div className="w-full flex mt-4 md:mt-6 gap-2 md:gap-4 justify-center text-sm">
             <div className="flex gap-2 items-center">
               <div className="w-4 h-4  bg-blue-600 rounded-md"></div>
               <p>This year</p>

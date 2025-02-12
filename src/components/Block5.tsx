@@ -22,11 +22,11 @@ const Block5 = () => {
   }, []);
 
   return (
-    <div className="w-full bg-white rounded-lg shadow-sm shadow-gray-200 p-6">
+    <div className="w-full bg-white rounded-lg shadow-sm shadow-gray-200 p-4 md:p-6">
       <p className="text-sm  font-semibold text-gray-500">Community Feedback</p>
       <p className="text-xl font-semibold">Mostly Positive</p>
 
-      <div className="w-full flex mt-4 gap-1">
+      <div className="w-full flex mt-2 md:mt-4 gap-1">
         <div
           style={{ width: `${data?.negative}%` }}
           className="min-h-2 rounded-full bg-red-300"
@@ -41,7 +41,7 @@ const Block5 = () => {
         ></div>
       </div>
 
-      <div className="w-full flex gap-2 mt-4">
+      <div className="w-full flex gap-2 mt-2 md:mt-4">
         <div>
           <p className="text-xs text-gray-500">Negative</p>
           <p className="text-sm font-semibold">{data?.negative}</p>
