@@ -8,7 +8,7 @@ import Sidebar from "../components/Sidebar";
 
 const Dashboard = () => {
   return (
-    <div className="min-h-[100dvh] w-full flex bg-gray-100 ">
+    <div className="min-h-[100dvh] w-full flex flex-col xl:flex-row bg-gray-100 ">
       <Sidebar />
 
       <div className="flex-grow p-2 md:p-4 flex flex-col lg:flex-row gap-2 md:gap-4">
