@@ -2,10 +2,9 @@ import { createClient } from "@supabase/supabase-js";
 
 const supabaseUrl = import.meta.env.VITE_SUPABASE_PROJECT_URL;
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
-
 const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
-export async function login(username: string, password: string) {
+export async function adminLogin(username: string, password: string) {
   const { data, error } = await supabase
     .from("admin")
     .select("*")
@@ -31,7 +30,7 @@ export async function login(username: string, password: string) {
   }
 }
 
-export async function getInstruments() {
+export async function getTableTwo() {
   const isAuthenticated = localStorage.getItem("authenticated");
   const creds = JSON.parse(localStorage.getItem("creds") || "{}");
 
@@ -45,20 +44,10 @@ export async function getInstruments() {
     password: creds.password,
   });
 
-  const { data, error } = await supabase.from("six").select();
+  const { data, error } = await supabase.from("two").select();
   if (error) {
-    console.error("Error fetching data from six:", error);
+    console.error("Error fetching data from table two:", error);
     return null;
   }
   return data;
 }
-
-// export async function admin() {
-
-//   const { data, error } = await supabase.from("admin").select();
-//   if (error) {
-//     console.error("Error fetching data from six:", error);
-//     return null;
-//   }
-//   return data;
-// }

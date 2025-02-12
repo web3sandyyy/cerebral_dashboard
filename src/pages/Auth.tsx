@@ -1,4 +1,4 @@
-import { login } from "../server";
+import { adminLogin } from "../server";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -8,7 +8,7 @@ const Auth = () => {
     const navigate = useNavigate();
 
     const auth = async () => {
-        const data = await login(username, password);
+        const data = await adminLogin(username, password);
 
         if (data.success) {
             navigate("/");
